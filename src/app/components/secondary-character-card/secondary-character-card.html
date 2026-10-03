@@ -1,0 +1,36 @@
+<mat-card>
+
+  <mat-card-content>
+
+    <section class="left">
+
+      <img
+        class="left-top"
+        [src]="data().img"
+        [alt]="data().name">
+
+      <p class="left-bottom">
+        {{ data().description }}
+      </p>
+
+    </section>
+
+    <section class="right">
+
+      @for (character of data().combat_style_character; track character.id) {
+
+      <div class="array">
+        {{ character.id }} - {{ character.name }}
+      </div>
+
+      } @empty {
+
+      <p>No hay personajes para mostrar</p>
+
+      }
+
+    </section>
+
+  </mat-card-content>
+
+</mat-card>
